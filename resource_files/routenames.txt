@@ -1,0 +1,180 @@
+A full comprehensive list of the route names and IDs to use for data analysis. Retrieved using nameretrievals.py.
+
+Route Name: Red Line, Route ID: Red
+Route Name: Mattapan Trolley, Route ID: Mattapan
+Route Name: Orange Line, Route ID: Orange
+Route Name: Green Line B, Route ID: Green-B
+Route Name: Green Line C, Route ID: Green-C
+Route Name: Green Line D, Route ID: Green-D
+Route Name: Green Line E, Route ID: Green-E
+Route Name: Blue Line, Route ID: Blue
+Route Name: Logan Airport Terminals - South Station, Route ID: 741
+Route Name: Design Center - South Station, Route ID: 742
+Route Name: Chelsea Station - South Station, Route ID: 743
+Route Name: Nubian Station - South Station, Route ID: 751
+Route Name: Nubian Station - Temple Place, Route ID: 749
+Route Name: Silver Line Way - South Station, Route ID: 746
+Route Name: Fairmount Line, Route ID: CR-Fairmount
+Route Name: Fitchburg Line, Route ID: CR-Fitchburg
+Route Name: Framingham/Worcester Line, Route ID: CR-Worcester
+Route Name: Franklin/Foxboro Line, Route ID: CR-Franklin
+Route Name: Greenbush Line, Route ID: CR-Greenbush
+Route Name: Haverhill Line, Route ID: CR-Haverhill
+Route Name: Kingston Line, Route ID: CR-Kingston
+Route Name: Lowell Line, Route ID: CR-Lowell
+Route Name: Middleborough/Lakeville Line, Route ID: CR-Middleborough
+Route Name: Needham Line, Route ID: CR-Needham
+Route Name: Newburyport/Rockport Line, Route ID: CR-Newburyport
+Route Name: Providence/Stoughton Line, Route ID: CR-Providence
+Route Name: Foxboro Event Service, Route ID: CR-Foxboro
+Route Name: Charlestown Ferry, Route ID: Boat-F4
+Route Name: Hingham/Hull Ferry, Route ID: Boat-F1
+Route Name: East Boston Ferry, Route ID: Boat-EastBoston
+Route Name: Lynn Ferry, Route ID: Boat-Lynn
+Route Name: Winthrop/Quincy Ferry, Route ID: Boat-F6
+Route Name: Sullivan Square Station - Ruggles Station, Route ID: 747
+Route Name: Beth Israel Deaconess Hospital - Andrew Station, Route ID: 708
+Route Name: Harvard Square - Nubian Station, Route ID: 1
+Route Name: North Station - Design Center, Route ID: 4
+Route Name: City Point - Otis Street & Summer Street, Route ID: 7
+Route Name: Harbor Point - Kenmore Station, Route ID: 8
+Route Name: City Point - Copley Square, Route ID: 9
+Route Name: City Point - Copley Square, Route ID: 10
+Route Name: City Point - Chauncy Street & Summer Street, Route ID: 11
+Route Name: Roslindale Square - Heath Street, Route ID: 14
+Route Name: Fields Corner Station or St Peter's Square - Ruggles Station, Route ID: 15
+Route Name: Forest Hills Station - Andrew Station or Harbor Point, Route ID: 16
+Route Name: Fields Corner Station - Andrew Station, Route ID: 17
+Route Name: Ashmont Station - Andrew Station, Route ID: 18
+Route Name: Fields Corner Station - Kenmore or Ruggles Station, Route ID: 19
+Route Name: Ashmont Station - Forest Hills Station, Route ID: 21
+Route Name: Ashmont Station - Ruggles Station via Talbot Ave, Route ID: 22
+Route Name: Ashmont Station - Ruggles Station via Washington Street, Route ID: 23
+Route Name: Wakefield Avenue & Truman Parkway - Ashmont Station, Route ID: 24
+Route Name: Ashmont Station - Norfolk Street Loop, Route ID: 26
+Route Name: Mattapan Station - Ruggles Station, Route ID: 28
+Route Name: Mattapan Station - Jackson Square Station, Route ID: 29
+Route Name: Mattapan Station - Forest Hills Station via Cummins Highway and Roslindale Square, Route ID: 30
+Route Name: Mattapan Station - Forest Hills Station via Morton Street, Route ID: 31
+Route Name: Wolcott or Cleary Square - Forest Hills Station, Route ID: 32
+Route Name: River Street & Milton Street - Mattapan Station, Route ID: 33
+Route Name: Dedham Square - Forest Hills Station, Route ID: 34
+Route Name: Walpole Center - Forest Hills Station, Route ID: 34E
+Route Name: Dedham Mall or Stimson Street - Forest Hills Station, Route ID: 35
+Route Name: Millennium Park or VA Hospital - Forest Hills Station, Route ID: 36
+Route Name: Baker Street & Vermont Street - Forest Hills Station, Route ID: 37
+Route Name: Wren Street - Forest Hills Station, Route ID: 38
+Route Name: Forest Hills Station - Back Bay Station, Route ID: 39
+Route Name: Georgetowne - Forest Hills Station, Route ID: 40
+Route Name: Centre Street & Eliot Street - JFK/UMass Station, Route ID: 41
+Route Name: Forest Hills Station - Nubian Station, Route ID: 42
+Route Name: Ruggles Station - Park Street Station, Route ID: 43
+Route Name: Jackson Square Station - Ruggles Station, Route ID: 44
+Route Name: Franklin Park - Ruggles Station, Route ID: 45
+Route Name: Central Square, Cambridge - Broadway Station, Route ID: 47
+Route Name: Cleary Square - Forest Hills Station, Route ID: 50
+Route Name: Reservoir Station - Forest Hills Station, Route ID: 51
+Route Name: Dedham Mall - Watertown Yard, Route ID: 52
+Route Name: West Fenway - Copley Square, Route ID: 55
+Route Name: Watertown Yard - Kenmore Station, Route ID: 57
+Route Name: Needham Junction - Watertown Square, Route ID: 59
+Route Name: Chestnut Hill - Kenmore Station, Route ID: 60
+Route Name: North Waltham - Waltham Center, Route ID: 61
+Route Name: Bedford VA Hospital - Alewife Station, Route ID: 62
+Route Name: Bedford VA Hospital - Alewife Station via Hanscom Airport, Route ID: 627
+Route Name: Oak Square - University Park or Kendall/MIT Station, Route ID: 64
+Route Name: Brighton Center - Kenmore Station, Route ID: 65
+Route Name: Harvard Square - Nubian Station, Route ID: 66
+Route Name: Turkey Hill - Alewife Station, Route ID: 67
+Route Name: Harvard Square - Kendall/MIT Station, Route ID: 68
+Route Name: Harvard Square - Lechmere Station, Route ID: 69
+Route Name: Market Place Drive or Waltham Center - University Park, Route ID: 70
+Route Name: Watertown Square - Harvard Station, Route ID: 71
+Route Name: Waverley Square - Harvard Station, Route ID: 73
+Route Name: Belmont Center - Harvard via Concord Avenue, Route ID: 74
+Route Name: Belmont Center - Harvard via Huron Avenue, Route ID: 75
+Route Name: Lincoln Lab - Alewife Station, Route ID: 76
+Route Name: Arlington Heights - Harvard Station, Route ID: 77
+Route Name: Arlmont Village - Harvard Station, Route ID: 78
+Route Name: Arlington Center - Lechmere Station, Route ID: 80
+Route Name: Rindge Avenue - Central Square, Cambridge, Route ID: 83
+Route Name: Spring Hill - Kendall/MIT Station, Route ID: 85
+Route Name: Sullivan Square Station - Reservoir Station, Route ID: 86
+Route Name: Clarendon Hill or Arlington Center - Lechmere Station, Route ID: 87
+Route Name: Clarendon Hill - Lechmere Station, Route ID: 88
+Route Name: Clarendon Hill or Davis Station - Sullivan Square Station, Route ID: 89
+Route Name: Davis Station - Assembly Row, Route ID: 90
+Route Name: Sullivan Square Station - Central Square, Cambridge, Route ID: 91
+Route Name: Sullivan Square Station - Downtown via Main Street, Route ID: 92
+Route Name: Sullivan Square Station - Downtown via Bunker Hill Street, Route ID: 93
+Route Name: Medford Square - Davis Station, Route ID: 94
+Route Name: West Medford or Arlington Center - Sullivan Square Station, Route ID: 95
+Route Name: Medford Square - Harvard Station, Route ID: 96
+Route Name: Malden Center Station - Wellington Station, Route ID: 97
+Route Name: Woodland Road - Wellington Station, Route ID: 99
+Route Name: Elm Street - Wellington Station, Route ID: 100
+Route Name: Malden Center Station - Sullivan Square Station via Winter Hill, Route ID: 101
+Route Name: Malden Center Station - Sullivan Square Station via Ferry Street, Route ID: 104
+Route Name: Malden Center Station - Sullivan Square Station via Newland Street Housing, Route ID: 105
+Route Name: Lebanon Loop - Wellington Station, Route ID: 106
+Route Name: Linden Square - Wellington Station, Route ID: 108
+Route Name: Linden Square - Sullivan Square Station, Route ID: 109
+Route Name: Wonderland Station - Wellington Station, Route ID: 110
+Route Name: Woodlawn - Haymarket Station, Route ID: 111
+Route Name: Wellington Station - Wood Island Station, Route ID: 112
+Route Name: Market Basket - Maverick Station, Route ID: 114
+Route Name: Wonderland Station - Maverick Station via Revere Street, Route ID: 116
+Route Name: Wonderland Station - Maverick Station via Beach Street, Route ID: 117
+Route Name: Northgate Shopping Center - Beachmont Station, Route ID: 119
+Route Name: Orient Heights Station - Jeffries Point, Route ID: 120
+Route Name: Wood Island Station - Maverick Station, Route ID: 121
+Route Name: Melrose Highlands - Malden Center Station, Route ID: 131
+Route Name: Redstone Shopping Center - Malden Center Station, Route ID: 132
+Route Name: North Woburn - Wellington Station, Route ID: 134
+Route Name: Reading Depot - Malden Center Station, Route ID: 137
+Route Name: Logan Airport Terminals - Nubian Station, Route ID: 171
+Route Name: Fields Corner Loop via Neponset Ave, Route ID: 201
+Route Name: Fields Corner Loop via Adams Street, Route ID: 202
+Route Name: Quincy Center Station - Fields Corner Station, Route ID: 210
+Route Name: Quincy Center Station - Squantum, Route ID: 211
+Route Name: Quincy Center Station - Ashmont Station via West Quincy, Route ID: 215
+Route Name: Houghs Neck - Quincy Center Station via Germantown, Route ID: 216
+Route Name: Quincy Center Station - Ashmont Station via Wollaston Station, Route ID: 217
+Route Name: Hingham Depot - Quincy Center Station, Route ID: 220
+Route Name: East Weymouth - Quincy Center Station, Route ID: 222
+Route Name: Weymouth Landing - Quincy Center Station, Route ID: 225
+Route Name: Columbian Square - Braintree Station, Route ID: 226
+Route Name: Montello Station - Quincy Center Station, Route ID: 230
+Route Name: South Shore Plaza - Quincy Center Station, Route ID: 236
+Route Name: Holbrook/Randolph Station - Quincy Center Station, Route ID: 238
+Route Name: Avon Square - Ashmont Station, Route ID: 240
+Route Name: Quincy Center Station - Mattapan Station, Route ID: 245
+Route Name: North Burlington - Alewife Station, Route ID: 350
+Route Name: Bedford Woods Drive - Third Avenue, Route ID: 351
+Route Name: North Burlington - State Street, Boston, Route ID: 354
+Route Name: Kennedy Drive or Jack Satter House - Malden Center Station, Route ID: 411
+Route Name: Eastern Avenue & Essex Street - Wonderland Station, Route ID: 424
+Route Name: Central Square, Lynn - Haymarket or Wonderland Station, Route ID: 426
+Route Name: Oaklandvale - Haymarket Station, Route ID: 428
+Route Name: Northgate Shopping Center - Central Square, Lynn, Route ID: 429
+Route Name: Saugus Center - Malden Center Station, Route ID: 430
+Route Name: Liberty Tree Mall - Central Square, Lynn via Peabody Square, Route ID: 435
+Route Name: Liberty Tree Mall - Central Square, Lynn via Goodwin Circle, Route ID: 436
+Route Name: Nahant - Wonderland Station, Route ID: 439
+Route Name: Marblehead - Wonderland Station via Paradise Road, Route ID: 441
+Route Name: Marblehead - Wonderland Station via Humphrey Street, Route ID: 442
+Route Name: Salem Depot - Wonderland or Haymarket Station, Route ID: 450
+Route Name: North Beverly Station - Salem Depot, Route ID: 451
+Route Name: Salem Depot - Wonderland Station, Route ID: 455
+Route Name: Salem Depot - Central Square, Lynn, Route ID: 456
+Route Name: Brighton Center - Federal Street & Franklin Street, Route ID: 501
+Route Name: Watertown Yard - Federal Street & Franklin Street, Route ID: 504
+Route Name: Waltham Center - Federal Street & Franklin Street, Route ID: 505
+Route Name: Roberts - Newton Corner, Route ID: 553
+Route Name: Waverley Square - Newton Corner, Route ID: 554
+Route Name: Waltham Highlands - Newton Corner, Route ID: 556
+Route Name: Riverside Station - Newton Corner, Route ID: 558
+Route Name: Point Shirley - Orient Heights Station via Revere Street, Route ID: 712
+Route Name: Point Shirley - Orient Heights Station via Winthrop Center, Route ID: 713
+Route Name: Pemberton Point, Hull - Station Street, Hingham, Route ID: 714
+Route Name: Cobbs Corner - Mattapan Station, Route ID: 716
