@@ -3,15 +3,12 @@ import requests
 def retrieveroutesprint() -> None:
     """
     Retrieve the names of all routes; print the parsed json data.
-
+    
     Args:
         None
-
     Returns:
         None
-
     """
-
     url = "https://api-v3.mbta.com/routes"
 
     response = requests.get(url)
@@ -29,12 +26,9 @@ def retrieverouteswrite() -> None:
 
     Args:
         None
-
     Returns:
         None
-
     """
-
     url = "https://api-v3.mbta.com/routes"
 
     response = requests.get(url)
@@ -53,12 +47,9 @@ def retrievestopsprint() -> None:
 
     Args:
         None
-
     Returns:
         None
-
     """
-
     url = "https://api-v3.mbta.com/stops"
     
     response = requests.get(url)
@@ -76,12 +67,9 @@ def retrievestopswrite() -> None:
 
     Args:
         None
-
     Returns:
         None
-
     """
-
     url = "https://api-v3.mbta.com/stops"
     
     response = requests.get(url)
