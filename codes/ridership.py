@@ -41,9 +41,11 @@ def rdshLineChart():
 
     return data
 
-def predictRiders():
+def predictRiders() -> None:
     """
-    Make a predictive model for the monthly riders.
+    Make a random forest regressor model for predicting commuter rail ridership, 
+    factoring in COVID-19 trends as well as lower ridership / ticket collection
+    due to line closures. Then, generate a graph based on prediction.
 
     Args:
         None
@@ -112,7 +114,7 @@ def predictRiders():
     
     plt.xlabel("Month")
     plt.ylabel("Rider Count")
-    plt.title("Predicted Monthly Ridership for 2025")
+    plt.title("Predicted Monthly MBTA Commuter Rail Ridership for 2025")
     plt.xticks(range(1, 13), 
                ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
                 "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
