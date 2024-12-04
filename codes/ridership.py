@@ -5,6 +5,13 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error, r2_score
 
+"""
+A few notes regarding this analysis:
+Some data needed to be adjusted in the CSV file to account for specific factors, such as line closures,
+COVID-19, etc. After fine tuning, the average R-squared value is about 0.93, with an average Mean Absolute
+Error of around 5700, so the model seems to have done quite well at predictions.
+"""
+
 def rdshLineChart():
     """
     Return a Pandas dataframe for the ridership CSV file, as well as 
@@ -15,7 +22,7 @@ def rdshLineChart():
     Returns:
         Pandas dataframe
     """
-    file_path = "/workspaces/MBTA-Data-Analysis/data/commuterridership.csv"
+    file_path = "/workspaces/MBTA-Data-Analysis/data/commuterridership2024.csv"
     data = pd.read_csv(file_path, index_col=0)
 
     plt.figure(figsize=(12, 6))
@@ -43,8 +50,7 @@ def predictRiders():
     Returns:
         None
     """
-    file_path = "/workspaces/MBTA-Data-Analysis/data/commuterridership.csv"
-    data = pd.read_csv(file_path, index_col=0)
+    data = rdshLineChart()
     
     data = data.T.reset_index()
     print(data, "\n")
@@ -69,36 +75,52 @@ def predictRiders():
     r2 = r2_score(y_test, y_pred)
     print(f"Mean Absolute Error: {mae}")
     print(f"R-squared: {r2}")
-    
-    plt.figure(figsize=(12, 6))
-    plt.scatter(y_test, y_pred, alpha=0.7, edgecolor='k')
-    plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], color='red', lw=2)
-    plt.title("Predicted vs. Actual Rider Counts")
-    plt.xlabel("Actual Rider Counts")
-    plt.ylabel("Predicted Rider Counts")
-    plt.grid(alpha=0.3)
-    plt.savefig("scattered")
 
     data["Predicted"] = model.predict(X)
 
     print(data)
-    
-    """
+
+    post_2020_data = data[data["Year"] >= 2020]
+
+    month_growth_rates = (
+        data.groupby("Month")["Rider_Count"]
+        .apply(lambda x: (x.values[-1] - x.values[0]) / (x.index[-1] - x.index[0] + 1))
+    )
+
+    future_years = [2025]
+    future_predictions = []
+
+    for year in future_years:
+        predictions = []
+        for month in range(1, 13):
+            latest_value = data[
+                (data["Year"] == 2024) & (data["Month"] == month)
+            ]["Rider_Count"].values[0]
+            
+            predicted_value = latest_value + month_growth_rates[month] * (year - 2024)
+            predictions.append(predicted_value)
+        
+        future_predictions.append(pd.Series(predictions, index=range(1, 13), name=year))
+
+    future_df = pd.concat(future_predictions, axis=1)
+    future_df.columns = ["2025"]
+
     plt.figure(figsize=(12, 6))
-    plt.plot(data["Rider_Count"], label="Actual", marker='o')
-    plt.plot(data["Predicted"], label="Predicted", linestyle='--', marker='x')
-    plt.legend()
-    plt.title("Actual vs. Predicted Rider Counts Over Time")
-    plt.xlabel("Time (Year-Month)")
-    plt.ylabel("Rider Counts")
-    plt.grid(alpha=0.3)
-    plt.xticks(np.arange(0, len(data), step=12), data["Year"].unique(), rotation=45)
-    plt.tight_layout()
-    plt.savefig("monthly_ridership_predictions")
-    plt.show()
-    """
 
-
+    for year in future_df.columns:
+        plt.plot(future_df.index, future_df[year], label=f"Predicted ridership for {year}", marker="o")
+    
+    plt.xlabel("Month")
+    plt.ylabel("Rider Count")
+    plt.title("Predicted Monthly Ridership for 2025")
+    plt.xticks(range(1, 13), 
+               ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"])
+    legend_text = f"R² = {r2:.2f}, MAE = {mae:.0f}"
+    plt.legend(title=legend_text)
+    plt.grid(True)
+    plt.savefig("ridershippredictions")
+    
 if __name__ == "__main__":
     
     predictRiders()
