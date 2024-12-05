@@ -12,7 +12,10 @@ whether or not the time of the year can affect the reliability of an MBTA Commut
 Rail line. Specifically, this is done by using a machine learning model w/linear regression.
 For higher R^2 values, the line is more affected by the month. For lower or 0 R^2 values, the
 month has no effect at all. The MAE will demonstrate the accuracy of the predictions based on the
-data given.
+data given. This also provides insight into some patterns that riders can look out for with specific lines.
+For example, the Fitchburg line seems to decline throughout the year, which can give riders insight into what months
+the train will run on time. However, there is a lot of assumption to be made based off of the prediction model alone,
+which is definitely a large shortcoming.
 """
 
 def reliabilityScores():
