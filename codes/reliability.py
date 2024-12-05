@@ -8,14 +8,11 @@ from sklearn.metrics import mean_absolute_error, r2_score
 
 """
 A few notes about this analysis; the question to be answered is regarding that of 
-whether or not the time of the year can affect the reliability of an MBTA Commuter
+whether or not the year can affect the reliability of an MBTA Commuter
 Rail line. Specifically, this is done by using a machine learning model w/linear regression.
-For higher R^2 values, the line is more affected by the month. For lower or 0 R^2 values, the
-month has no effect at all. The MAE will demonstrate the accuracy of the predictions based on the
+For higher R^2 values, the line is more affected over time. For lower or 0 R^2 values, the
+passage of time has no effect at all. The MAE will demonstrate the accuracy of the predictions based on the
 data given. This also provides insight into some patterns that riders can look out for with specific lines.
-For example, the Fitchburg line seems to decline throughout the year, which can give riders insight into what months
-the train will run on time. However, there is a lot of assumption to be made based off of the prediction model alone,
-which is definitely a large shortcoming.
 """
 
 def reliabilityScores():
@@ -50,11 +47,10 @@ def reliabilityScores():
 
     return aggregated_scores
 
-def reliabilityRegression():
+def reliability_trend_by_year():
     """
-    Create a linear regression model for predicting the reliability scores for each
-    commuter rail line based on month. This will determine if the month of the year has
-    any major effect on any of the lines.
+    Generate a prediction for the reliability of each rail line for 2025 based on the
+    historical data. Use linear regression to make this prediction.
 
     Args:
         None
@@ -62,64 +58,55 @@ def reliabilityRegression():
         None
     """
     data = pd.read_csv("/workspaces/MBTA-Data-Analysis/data/commuterreliability.csv")
-
     data['service_date'] = pd.to_datetime(data['service_date'])
-    data['year_month'] = data['service_date'].dt.to_period('M')
-    data['reliability_score'] = data['otp_numerator'] / data['otp_denominator']
-
-    data = data[(data['reliability_score'].notna()) & (data['otp_denominator'] > 0)]
-    data['month'] = data['service_date'].dt.month
     data['year'] = data['service_date'].dt.year
 
-    monthly_data = data.groupby(['month', 'gtfs_route_long_name']).agg(
+    data['reliability_score'] = data['otp_numerator'] / data['otp_denominator']
+    data = data[(data['reliability_score'].notna()) & (data['otp_denominator'] > 0)]
+    yearly_data = data.groupby(['year', 'gtfs_route_long_name']).agg(
         reliability_score=('reliability_score', 'mean')
     ).reset_index()
 
-    predictions = pd.DataFrame()
-    lines = monthly_data['gtfs_route_long_name'].unique()
+    plt.figure(figsize=(12, 6))
+    lines = yearly_data['gtfs_route_long_name'].unique()
+    colormap = plt.cm.get_cmap('tab20', len(lines))
+    colors = colormap.colors[:len(lines)]
 
-    colormap = cm.get_cmap('tab20', len(lines))
-    colors = {line: colormap(i) for i, line in enumerate(lines)}
+    legend_entries = []
 
-    plt.figure(figsize=(12, 8))
-    for line in lines:
-        line_data = monthly_data[monthly_data['gtfs_route_long_name'] == line].copy()
+    for i, line in enumerate(lines):
+        line_data = yearly_data[yearly_data['gtfs_route_long_name'] == line]
 
-        X = line_data[['month']]
+        X = line_data[['year']]
         y = line_data['reliability_score']
-
         model = LinearRegression()
         model.fit(X, y)
 
-        line_data['predicted_reliability'] = model.predict(X)
+        future_years = pd.DataFrame({'year': np.arange(line_data['year'].min(), 2026)})
+        predictions = model.predict(future_years)
 
-        r2 = model.score(X, y)
-        mae = mean_absolute_error(y, line_data['predicted_reliability'])
-
-        predictions = pd.concat([predictions, line_data])
+        y_pred_train = model.predict(X)
+        r2 = r2_score(y, y_pred_train)
+        mae = mean_absolute_error(y, y_pred_train)
 
         plt.plot(
-            line_data['month'],
-            line_data['predicted_reliability'],
-            label=f"{line} (R²: {r2:.2f}, MAE: {mae:.2f})",
-            marker='o',
-            color=colors[line]
+            future_years['year'], predictions, 
+            color=colors[i], label=f"{line} (R²={r2:.2f}, MAE={mae:.2f})", 
+            marker='o', markersize=5
         )
 
-    plt.xlabel('Month')
-    plt.ylabel('Predicted Reliability Score')
-    plt.title('Predicted Reliability by Train Line (Aggregated by Month)')
-    plt.xticks(
-        ticks=range(1, 13),
-        labels=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    )
-
-    plt.legend(loc='lower left', fontsize=8)
+    plt.title("Predicted MBTA Commuter Rail Reliability by Year", fontsize=16)
+    plt.xlabel("Year", fontsize=12)
+    plt.ylabel("Reliability Score", fontsize=12)
+    plt.xticks(np.arange(yearly_data['year'].min(), 2026, 1))
+    plt.legend(title="Commuter Rail Lines", bbox_to_anchor=(1.05, 1), loc='upper left')
+    plt.grid(alpha=0.4)
     plt.tight_layout()
-    plt.savefig("reliabilitypredictions")
+
+    plt.savefig("reliabilitypredictionswith2025")
 
 if __name__ == "__main__":
-    
-    comparetimes()
 
-    reliabilityRegression()
+    reliabilityScores()
+
+    reliability_trend_by_year()
